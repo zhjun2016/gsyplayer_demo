@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+
+android {
+
+//    def globalConfiguration = rootProject.extensions.getByName("ext")
+//    compileSdkVersion globalConfiguration.androidCompileSdkVersion
+//    buildToolsVersion globalConfiguration.androidBuildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+
+//        minSdkVersion globalConfiguration.androidMinSdkVersion
+//        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+   // implementation androidDependencies.appcompat_v7
+    implementation "com.android.support:appcompat-v7:26.1.0"
+
+
+    implementation "tv.danmaku.ijk.media:ijkplayer-java:0.8.8"
+    implementation "tv.danmaku.ijk.media:ijkplayer-exo:0.8.8"
+    implementation "com.andkulikov:transitionseverywhere:1.7.0"
+//    implementation "com.github.bumptech.glide:glide:4.0.0"
+//    implementation "com.github.bumptech.glide:compiler:4.0.0"
+
+
+//    def viewDependencies = rootProject.ext.viewDependencies
+//    api viewDependencies.ijkplayer_java
+//    api viewDependencies.ijkplayer_exo
+//    api viewDependencies.transitionseverywhere
+    //api project(':gsyVideoPlayer-proxy_cache')
+    //api project(':gsyVideoPlayer-base')
+   // api "com.shuyu:gsyVideoPlayer-base:$gsyVideoVersion"
+//    api "com.shuyu:gsyvideoplayer-androidvideocache:6.0.3"
+
+
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile androidDependencies.appcompat_v7
+//    def viewDependencies = rootProject.ext.viewDependencies
+//    compile viewDependencies.ijkplayer_java
+//    compile viewDependencies.transitionseverywhere
+//    compile "com.shuyu:gsyvideoplayer-androidvideocache:$gsyVideoVersion"
+//    compile "com.shuyu:gsyVideoPlayer-base:$gsyVideoVersion"
+
+}
+
+//apply from: './bintray.gradle'
